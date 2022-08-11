@@ -12,8 +12,8 @@ const io = require('socket.io',{ transports: ['websocket',  'polling'] } )(serve
         // accept requests only from this
         // origin: "http://localhost:3000"
         // allows acces for all origins
-        origin: "*",
-        // origin: "https://video-call-app-delta.vercel.app",
+        // origin: "*",
+        origin: "https://video-call-app-delta.vercel.app",
         methods: ['GET', 'POST']
     }
 })
