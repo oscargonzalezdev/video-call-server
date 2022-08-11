@@ -5,14 +5,14 @@ require('dotenv').config()
 app.use(cors())
 const PORT = process.env.PORT
 
-const server = require("https").createServer(app);
+const server = require("http").createServer(app);
 
 const io = require('socket.io')(server, {
     cors: {
-        // allows acces for all origins
         // accept requests only from this
-        // origin: "http://localhost:3000",
-        origin: "https://video-call-app-delta.vercel.app",
+        // origin: "http://localhost:3000"
+        // allows acces for all origins
+        origin: "*",
         methods: ['GET', 'POST']
     }
 })
