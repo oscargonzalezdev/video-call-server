@@ -12,7 +12,7 @@ const io = require('socket.io')(server, {
         // accept requests only from this
         // origin: "http://localhost:3000"
         // allows acces for all origins
-        origin: "*",
+        origin: "https://video-call-app-delta.vercel.app",
         methods: ['GET', 'POST']
     }
 })
