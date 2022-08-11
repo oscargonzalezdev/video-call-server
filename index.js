@@ -1,21 +1,21 @@
 // initialize dependencies
 const app = require('express')();
-const server = require("http").createServer(app);
 const cors = require('cors')
 require('dotenv').config()
+app.use(cors())
+const PORT = process.env.PORT
+
+const server = require("https").createServer(app);
 
 const io = require('socket.io')(server, {
     cors: {
         // allows acces for all origins
-        // accept requests only from this origin
+        // accept requests only from this
+        // origin: "http://localhost:3000",
         origin: "https://video-call-app-delta.vercel.app",
         methods: ['GET', 'POST']
     }
 })
-
-app.use(cors())
-
-const PORT = process.env.PORT
 
 app.get("/", (req, res) => {
     res.send('Server is running.')
