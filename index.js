@@ -7,8 +7,8 @@ require('dotenv').config()
 const io = require('socket.io')(server, {
     cors: {
         // allows acces for all origins
-        // needs to be changed for my origin later
-        origin: "*",
+        // accept requests only from this origin
+        origin: "https://video-call-app-delta.vercel.app",
         methods: ['GET', 'POST']
     }
 })
