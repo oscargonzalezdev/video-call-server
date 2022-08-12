@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 5001
 
 const server = require("http").createServer(app);
 
-const io = require('socket.io',{ transports: ['polling'] } )(server, {
+const io = require('socket.io',{ transports: ['websocket'] } )(server, {
     cors: {
         // accept requests only from this
         // origin: "http://localhost:3000"
