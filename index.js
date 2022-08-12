@@ -2,7 +2,7 @@
 const app = require('express')();
 const cors = require('cors')
 require('dotenv').config()
-app.use(cors())
+
 const PORT = process.env.PORT || 5001
 
 const server = require("http").createServer(app);
@@ -11,12 +11,14 @@ const io = require('socket.io')(server, {
     cors: {
         // accept requests only from this
         // origin: "http://localhost:3000"
+        
         // allows acces for all origins
-        // origin: "*",
         origin: "*",
         methods: ['GET', 'POST']
     }
 })
+
+app.use(cors())
 
 app.get("/", (req, res) => {
     res.send('Server is running.')
